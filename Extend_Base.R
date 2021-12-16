@@ -37,6 +37,7 @@ Extend_Base <- function(Unit, Str_Year, End_Year, Var) {
                 fill(Var) # form tidyr, fills "down" by default
         
         # Converts to DF and order by Unit and Year 
-        b <- as.data.frame(b) %>% arrange(., Unit, Year)
+        b <- as.data.frame(b) %>% arrange(., Unit, Year) %>% distinct(.)
         return(b)
 }
+
